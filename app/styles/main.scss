@@ -4,6 +4,109 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+html, body {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  font-family: 'Astloch', cursive;
+}
+
+h2 {
+  font-size: 54px;
+  margin-top: 10em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+
+  span {
+    margin-left: -20px;
+  }
+}
+
+nav {
+  position: fixed;
+  width: 94vw;
+  height: 90px;
+  left: 50%;
+  margin-left: -47vw;
+  top: 1em;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  z-index: 5;
+  font-size: 12px;
+  background: white;
+
+  ul, li {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  ul {
+    display: inline-block;
+    width: 33%;
+    margin-top: 13px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  a {
+    color: #333;
+
+    &:active, &:hover {
+      color: #333;
+      font-weight: 700;
+      text-decoration: none;
+
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  li.is-active a {
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .num {
+    margin-right: 2em;
+  }
+}
+
+.section-0 {
+  h2 {
+    margin-top: 3em;
+  }
+}
+
+.content {
+  padding: 2em 0 0 0;
+  border-top: 2px solid blue;
+  text-align: justify;
+
+  &::first-letter {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 38px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 60px;
+    padding-right: 10px;
+    margin-left: -20px;
+  }
+}
+
 .items {
   position: fixed;
   top: 0;
