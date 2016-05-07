@@ -56,8 +56,9 @@ nav {
 
   a {
     color: #333;
+    text-decoration: none;
 
-    &:active, &:hover {
+    &:visited, &:active, &:hover {
       color: #333;
       font-weight: 700;
       text-decoration: none;
