@@ -215,21 +215,21 @@
     </div> -->
 
     <div class="panel panel-left">
+      <main>
+        contenu ici
+      </main>
       <header>
         <div>Vue d'ensemble</div>
       </header>
-      <content>
-        contenu ici
-      </content>
     </div>
 
     <div class="panel panel-right">
       <header>
         <div>Chronologie</div>
       </header>
-      <content>
+      <main>
         contenu ici
-      </content>
+      </main>
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -251,7 +251,12 @@
             $window = $(window),
             thresholds = [],
             lastSectionName = 'presse',
-            $navElm = $('nav li');
+            $navElm = $('nav li'),
+            $panels = $('.panel');
+
+        $panels.find('header').click(function (e) {
+          $(this).parent().find('main').toggleClass('is-active');
+        });
 
         $navElm.each(function (i, elm) {
           var $a = $(elm).find('a');

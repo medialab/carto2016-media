@@ -115,7 +115,28 @@ nav {
 }
 
 .panel {
+  z-index: 30;
+  position: fixed;
+
+  main {
+    z-index: 0;
+    position: fixed;
+    width: 95vw;
+    height: 100vh;
+    top: 0;
+    background: blue;
+    transition: margin-left 1s;
+  }
+
   &.panel-left {
+    main {
+      margin-left: -100vw;
+
+      &.is-active {
+        margin-left: 0;
+      }
+    }
+
     header {
       left: 0;
 
@@ -127,6 +148,14 @@ nav {
   }
 
   &.panel-right {
+    main {
+      margin-left: 100vw;
+
+      &.is-active {
+        margin-left: 4vw;
+      }
+    }
+
     header {
       right: 0;
 
@@ -151,7 +180,7 @@ nav {
     height: 100vh;
     background: blue;
     top: 0;
-    z-index: 10;
+    z-index: 1;
     cursor: pointer;
     transition: width 500ms;
 
