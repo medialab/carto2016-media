@@ -25,10 +25,10 @@ h2 {
 
 nav {
   position: fixed;
-  width: 94vw;
+  width: 90vw;
   height: 90px;
   left: 50%;
-  margin-left: -47vw;
+  margin-left: -45vw;
   top: 1em;
   border-top: 2px solid blue;
   border-bottom: 2px solid blue;
@@ -112,4 +112,66 @@ nav {
   position: fixed;
   top: 0;
   height: 100vh;
+}
+
+.panel {
+  &.panel-left {
+    header {
+      left: 0;
+
+      div {
+        transform: rotate(-90deg);
+        margin-left: -82px;
+      }
+    }
+  }
+
+  &.panel-right {
+    header {
+      right: 0;
+
+      div {
+        transform: rotate(90deg);
+        margin-left: -82px;
+      }
+    }
+  }
+
+  &.panel-left {
+    header:hover {
+      div {
+        margin-left: -77px;
+      }
+    }
+  }
+
+  header {
+    position: fixed;
+    width: 35px;
+    height: 100vh;
+    background: blue;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    transition: width 500ms;
+
+    &:hover {
+      width: 40px;
+    }
+
+    div {
+      transition: margin-left 500ms;
+      pointer-events: none;
+      position: absolute;
+      color: white;
+      width: 200px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: bold;
+      top: 50%;
+      left: 0;
+      height: auto;
+    }
+  }
 }
