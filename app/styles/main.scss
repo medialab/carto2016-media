@@ -6,6 +6,7 @@ $icon-font-path: '../fonts/';
 
 html, body {
   font-family: 'Rubik', sans-serif;
+  font-weight: 300;
 }
 
 h1 {
@@ -20,6 +21,73 @@ h2 {
 
   span {
     margin-left: -20px;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  background: white;
+  z-index: 10;
+  min-height: 100vh;
+
+  h1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 270px;
+    font-size: 120px;
+    position: relative;
+    margin-top: calc(50vh - 135px);
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 70px;
+  }
+
+  .sub {
+    position: relative;
+    margin-left: 55px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: blue;
+    padding-top: 1em;
+    border-top: 3px solid blue;
+  }
+
+  .row {
+    margin-top: -25em;
+  }
+
+  .text {
+    margin-left: 3.3%;
+    font-weight: 500;
+    text-align: justify;
+
+    p:first-child::first-letter {
+      font-size: 45px;
+      font-weight: bold;
+      line-height: 38px;
+      position: relative;
+      display: inline-block;
+      float: left;
+      height: 60px;
+      padding-right: 10px;
+    }
+
+    .btn-container {
+      margin-top: 2em;
+      margin-bottom: 4em;
+      text-align: center;
+    }
   }
 }
 
@@ -60,25 +128,9 @@ button.btn {
   }
 }
 
-nav {
+nav.inner, nav.actions {
   position: fixed;
-  width: 90vw;
-  height: 90px;
-  left: 50%;
-  margin-left: -45vw;
-  top: 4.5em;
-  border-top: 2px solid blue;
-  border-bottom: 2px solid blue;
-  z-index: 5;
-  font-size: 12px;
   background: white;
-
-  .actions {
-    margin-top: -45px;
-    margin-bottom: 10px;
-    width: 100%;
-    position: relative;
-  }
 
   ul, li {
     list-style: none;
@@ -126,6 +178,29 @@ nav {
   .num {
     margin-right: 2em;
   }
+}
+
+nav.inner {
+  width: 90vw;
+  height: 90px;
+  left: 50%;
+  margin-left: -45vw;
+  top: 4.5em;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  z-index: 5;
+  font-size: 12px;
+}
+
+nav.actions {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 20;
+  width: 90vw;
+  height: auto;
+  left: 50%;
+  margin-left: -45vw;
 }
 
 .section-0 {

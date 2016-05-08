@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <link href='https://fonts.googleapis.com/css?family=Rubik:300,700|Astloch' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik:300,500,700|Astloch' rel='stylesheet' type='text/css'>
 
   </head>
   <body>
@@ -26,11 +26,11 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <nav>
-      <div class="actions">
-        <button class="btn">Home</button>
-        <button class="btn pull-right">A propos</button>
-      </div>
+    <nav class="actions">
+      <button class="btn btn-home">Home</button>
+      <button class="btn pull-right">A propos</button>
+    </nav>
+    <nav class="inner">
       <ul>
         <li class="is-active"><a href="#presse"><span class="num">1</span> La presse, une industrie en crise</a></li>
         <li class=""><a href="#gratuit"><span class="num">2</span> L'illusion du gratuit</a></li>
@@ -48,7 +48,7 @@
       </ul>
     </nav>
 
-    <div class="container">
+    <div class="container inquiry hide">
 
       <section class="row section-0" name="presse">
         <h2 class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1"><span>La presse, une industrie en crise</span></h2>
@@ -214,6 +214,26 @@
 
     </div>
 
+    <div class="container cover">
+        <h1>L'info en ligne:<br/>David avec Goliath ?</h1>
+        <div class="sub">
+          Une étude de controverse menée par<br/>
+          Marine Doux - Tsukasa Tanimoto - Ariane Seibert - Anne-Lou Cabarat - Coline Virly
+        </div>
+        <div class="row">
+          <h2 class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+            Dire que les entreprises de presse sont en crise n’est pas chose nouvelle.
+          </h2>
+          <div class="text col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <p class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">Se consolidant dans le système de insiding et outsiding, la délégation de la Théorie Générale des Organisations peut gérer la renaissance africaine provenant d'une dynamique syncronique, je vous en prie. C’est à dire quand on parle de ces rollers, la cosmogonisation vers la compromettance pour des saint-bioules consiste à vanter le chicouangue propre(s) aux congolais, je vous en prie. D'une manière ou d'une autre, la compétence de toute la République Démocratique du Congo doit défendre le conpemdium autour des gens qui connaissent beaucoup de choses, mais oui. Nous n’allons pas seulement danser ou jouer au football, la congolexicomatisation de toute la République Démocratique du Congo suffit à booster les encadrés possédant la francophonie, c’est clair.</p>
+            <p class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">Quand on parle de relaxation, la congolexicomatisation vers la compromettance pour des saint-bioules se résume à effaceter les quatre carrés fous du fromage propre(s) aux congolais, je vous en prie. Chapitre abstrait 3 du conpendium : l'imbroglio de toute la République Démocratique du Congo invite à imposer la nucléarité comparé(e)(s) la rénaque, tu sais ça. Au nom de toute la communauté des savants, la contextualisation de la technicité informatisée va régler une kermesse propre(s) aux congolais, bonnes fêtes. Vous avez le système de check-up vers les anti-valeurs, vous avez le curuna, or la congolexicomatisation à l'incognito se résume à effaceter l'upensmie dans les camps militaires non-voyants, bonnes fêtes.</p>
+            <p class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 btn-container">
+              <button class="btn btn-start">Entrer dans la controverse</button>
+            </p>
+          </div>
+        </div>
+    </div>
+
     <!-- <div class="items items-0">
       <div class="item" data-0p="margin-top:100vh" data-100p="margin-top:-10vh">coucou</div>
     </div> -->
@@ -251,62 +271,75 @@
       $(function () {
         skrollr.init();
 
-        var $sections = $('section'),
+        var isStarted = false,
+            $sections = $('section'),
             $window = $(window),
             thresholds = [],
             lastSectionName = 'presse',
             $navElm = $('nav li'),
             $panels = $('.panel');
 
-        $panels.find('header').click(function (e) {
-          $(this).parent().find('main').toggleClass('is-active');
-        });
-
-        $navElm.each(function (i, elm) {
-          var $a = $(elm).find('a');
-          $a.click(function (e) {
-            var hash = e.target.hash.substring(1),
-                offset = hash === 'presse' ?
-                  $("[name='" + hash + "']").offset().top -100 :
-                  $("[name='" + hash + "']").offset().top + 330;
-            $window.scrollTo(offset, 3000, {easing: 'easeInOutCubic'});
+        function start() {
+          if (isStarted) return;
+          $('.container.inquiry').removeClass('hide');
+          $('.container.cover').delay(250).fadeOut(500, function () {
+            $('.container.cover').remove();
+            $window.scrollTo(0);
           });
-        });
+          isStarted = true;
 
-        $sections.each(function (i, section) {
-          var $section = $(section);
-              max = i < $sections.length - 1 ?
-                    $($sections[i + 1]).offset().top :
-                    10000000;
-
-          thresholds.push({
-            min: $section.offset().top,
-            max: max,
-            name: $section.attr('name')
-          })
-        });
-
-        $window.on('scroll', function (e) {
-          var pos = $window.scrollTop(),
-              sectionName = '';
-
-          thresholds.some(function (t, i) {
-            if (pos >= t.min && pos <= t.max) {
-              sectionName = t.name;
-              return true;
-            }
+          $panels.find('header').click(function (e) {
+            $(this).parent().find('main').toggleClass('is-active');
           });
 
           $navElm.each(function (i, elm) {
-            var $elm = $(elm);
-            if ($elm.find('a').attr('href').substring(1) === sectionName) {
-              $elm.addClass('is-active');
-              lastSectionName = sectionName;
-            } else {
-              $elm.removeClass('is-active');
-            }
+            var $a = $(elm).find('a');
+            $a.click(function (e) {
+              var hash = e.target.hash.substring(1),
+                  offset = hash === 'presse' ?
+                    $("[name='" + hash + "']").offset().top -100 :
+                    $("[name='" + hash + "']").offset().top + 330;
+              $window.scrollTo(offset, 3000, {easing: 'easeInOutCubic'});
+            });
           });
-        });
+
+          $sections.each(function (i, section) {
+            var $section = $(section);
+                max = i < $sections.length - 1 ?
+                      $($sections[i + 1]).offset().top :
+                      10000000;
+
+            thresholds.push({
+              min: $section.offset().top,
+              max: max,
+              name: $section.attr('name')
+            })
+          });
+
+          $window.on('scroll', function (e) {
+            var pos = $window.scrollTop(),
+                sectionName = '';
+
+            thresholds.some(function (t, i) {
+              if (pos >= t.min && pos <= t.max) {
+                sectionName = t.name;
+                return true;
+              }
+            });
+
+            $navElm.each(function (i, elm) {
+              var $elm = $(elm);
+              if ($elm.find('a').attr('href').substring(1) === sectionName) {
+                $elm.addClass('is-active');
+                lastSectionName = sectionName;
+              } else {
+                $elm.removeClass('is-active');
+              }
+            });
+          });
+        }
+
+        $('.btn-home, .btn-start').click(start);
       });
     </script>
   </body>
