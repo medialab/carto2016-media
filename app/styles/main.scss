@@ -242,9 +242,14 @@ nav.actions {
     position: fixed;
     width: 95vw;
     height: 100vh;
-    top: 0;
     background: blue;
     transition: margin-left 1s;
+    cursor: pointer;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &.panel-left {
@@ -272,6 +277,16 @@ nav.actions {
 
       &.is-active {
         margin-left: 4vw;
+      }
+
+      img {
+        position: absolute;
+        left: -5%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 80%;
+        width: 100%;
       }
     }
 
