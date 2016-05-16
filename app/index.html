@@ -755,7 +755,7 @@
 
     <div class="panel panel-left">
       <main>
-        <img src="images/infographic.png" height="100%" width="auto">
+        <img src="images/ensemble-01.svg" height="100%" width="auto">
       </main>
       <header>
         <div>Vue d'ensemble</div>
@@ -768,7 +768,7 @@
       </header>
       <main>
         <div>
-          <img src="images/timeline.svg" height="80%" width="auto">
+          <img src="images/ensemble-02.svg" height="80%" width="auto">
         </div>
       </main>
     </div>
@@ -808,6 +808,8 @@
 
         function start() {
           if (isStarted) return;
+
+          $('html, body').css({'overflow': 'auto'})
 
           function openActors(name) {
             $actorPanelContainer.removeClass('hide');

@@ -1,8 +1,8 @@
 $icon-font-path: '../fonts/';
-$green: #00ff00;
-$blue: #0000ff;
-$yellow: yellow;
-$grey: grey;
+$green: rgb(109, 202, 127);
+$blue: rgb(118, 162, 240);
+$yellow: rgb(246, 208, 73);
+$grey: rgb(197, 199, 201);
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -11,7 +11,7 @@ $grey: grey;
 html, body {
   font-family: 'Rubik', sans-serif;
   font-weight: 300;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1 {
@@ -326,6 +326,10 @@ a, a:visited, a:active, a:hover {
   &.panel-left {
     main {
       margin-left: -100vw;
+
+      img {
+        margin-left: 160px;
+      }
 
       &.is-active {
         margin-left: 0;
