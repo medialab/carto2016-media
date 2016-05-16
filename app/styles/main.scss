@@ -234,6 +234,10 @@ nav.actions {
   }
 }
 
+a, a:visited, a:active, a:hover {
+  text-decoration: none;
+}
+
 .items {
   position: fixed;
   top: 0;
