@@ -1,6 +1,8 @@
 $icon-font-path: '../fonts/';
 $green: #00ff00;
 $blue: #0000ff;
+$yellow: yellow;
+$grey: grey;
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -249,8 +251,56 @@ a, a:visited, a:active, a:hover {
 .raw {
   width: 90vw;
 
+  .raw-item.quote {
+    width: 80vw;
+    float: left;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: italic;
+    padding: 1em;
+    border: 3px solid $green;
+    margin-right: 1em;
+    margin-bottom: 3em;
+    text-align: left;
+  }
+
   .raw-item.schema {
     width: 600px;
+    border: 3px solid $yellow;
+    float: left;
+    position: relative;
+    margin-right: 1em;
+    margin-bottom: 3em;
+  }
+
+  .raw-item.minimask {
+    width: 600px;
+    border: 3px solid $grey;
+    float: left;
+    position: relative;
+    margin-right: 1em;
+    margin-bottom: 3em;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: italic;
+    padding: 1em;
+    text-align: left;
+  }
+
+  .raw-item.tweet {
+    float: left;
+    position: relative;
+    margin-right: 1em;
+    margin-bottom: 3em;
+  }
+
+  .raw-item.video {
+    margin: 4em;
+    border: 3px solid $green;
+    width: 565px;
+    height: 320px;
+    float: left;
+    position: relative;
   }
 }
 
