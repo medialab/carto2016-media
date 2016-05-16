@@ -27,6 +27,7 @@ h2 {
   }
 }
 
+
 .no-scroll {
   overflow: hidden;
 }
@@ -361,6 +362,7 @@ a, a:visited, a:active, a:hover {
 
 .actors {
   position: fixed;
+  overflow-y: auto;
   background: white;
   display: block;
   top: 0;
@@ -371,7 +373,31 @@ a, a:visited, a:active, a:hover {
 
   .actors-frame {
     width: 85%;
+    padding-top: 3em;
+    padding-bottom: 3em;
     margin: 0 auto;
     border: 3px solid $green;
+
+    h2 {
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: $green;
+
+      span {
+        margin-left: 0;
+      }
+    }
+
+    h4 {
+      text-transform: uppercase;
+      margin-top: 2em;
+      color: $green;
+    }
+
+    .sub {
+      margin-bottom: 40px;
+    }
   }
 }
