@@ -43,10 +43,14 @@ h2 {
   h1 {
     margin-left: 50px;
     margin-right: 50px;
-    height: 270px;
-    font-size: 120px;
+    height: 230px;
+    font-size: 90px;
     position: relative;
-    margin-top: calc(50vh - 135px);
+    margin-top: calc(50vh - 150px);
+  }
+
+  h3 {
+    margin-left: 50px;
   }
 
   h2 {
@@ -234,6 +238,15 @@ nav.actions {
   position: fixed;
   top: 0;
   height: 100vh;
+  left: 100px;
+}
+
+.raw {
+  width: 90vw;
+
+  .raw-item.schema {
+    width: 600px;
+  }
 }
 
 .panel {
