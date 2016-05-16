@@ -748,6 +748,11 @@
 
     </div>
 
+    <div class="lexiques hide">
+      <a href="#" class="close-lexique">Retour à la controverse</a>
+      <img src="" width="auto" height="90%" />
+    </div>
+
     <div class="panel panel-left">
       <main>
         <img src="images/infographic.png" height="100%" width="auto">
@@ -791,7 +796,8 @@
             $actors = $('[data-acteur]'),
             $lexique = $('[data-lexique]'),
             $actorPanelContainer = $('.actors'),
-            $actorPanels = $('.actor');
+            $actorPanels = $('.actor'),
+            $lexiquePanelContainer = $('.lexiques');
 
         function togglePanel(e) {
           $(this).parent().find('main').toggleClass('is-active');
@@ -821,10 +827,17 @@
           }
 
           function openLexique(name) {
-            console.log(name);
+            $lexiquePanelContainer.removeClass('hide');
+            $lexiquePanelContainer.find('img').attr('src', 'images/lexique-' + name + '.png');
+          }
+
+          function closeLexique(e) {
+            e.preventDefault();
+            $lexiquePanelContainer.addClass('hide');
           }
 
           $('.close-actors').click(closeActors);
+          $('.close-lexique').click(closeLexique);
 
           $lexique.click(function (e) {
             e.preventDefault();
